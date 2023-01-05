@@ -1,0 +1,126 @@
+.header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    transition: all 0.5s;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__left .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__left .logo h2,
+.logo__icon {
+    color: #fff;
+}
+
+.header__left .logo .logo__icon {
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+}
+
+.header__right .MenuIcon {
+    color: #fff;
+}
+
+/* Menú */
+
+.header__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 100%;
+    -webkit-box-shadow: 5px 5px 19px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 5px 19px 1px rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    min-width: 250px;
+    transition: all 0.5s;
+
+}
+
+.header__menu .header__menuTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    transition: all 0.5s;
+    border-bottom: solid 1px #e4dbdb;
+}
+
+.header__menuTop .ButtonBack {
+    color: #fff;
+    border-color: #fff;
+    margin-bottom: 3rem;
+}
+
+.header__menuTop .ButtonBack:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #1691c2;
+}
+
+.header__menuTop .ButtonBackDark {
+    color: #fff;
+    border-color: #fff;
+    margin-bottom: 3rem;
+}
+
+.header__menuTop .ButtonBackDark:hover {
+    border-color: #ff8300;
+    color: #ff8300;
+}
+
+
+
+.ArrowIcon {
+    font-size: 1.25rem;
+    margin-left: 0.25rem;
+    margin-bottom: 0.1rem;
+}
+
+.header__menuTop .UserWelcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+.header__menuTop .UserWelcome h4 {
+    font-weight: 400;
+}
+
+.header__menuBottom {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__menu--hide {
+    transform: translateX(-100%);
+}
+
+.hideBm {
+    visibility: hidden;
+}
