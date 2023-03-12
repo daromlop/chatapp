@@ -2,12 +2,10 @@ import { auth, provider } from "../firebase";
 import { Button } from "@mui/material";
 import React from "react";
 import "./Login.css";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setUser } from "../reducers/userSlice";
 
 const Login = () => {
-  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const signin = () => {

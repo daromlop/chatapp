@@ -10,11 +10,10 @@ import { useSelector } from "react-redux";
 
 const Main = () => {
   const { user } = useSelector((state) => state.user);
+  const { darkMode } = useSelector((state) => state.visuals);
 
   const [posts, setPosts] = useState([]);
-  const [input, setInput] = useState({
-    text: "",
-  });
+  const [input, setInput] = useState("");
 
   const [likes, setLikes] = useState([]);
 
@@ -51,10 +50,9 @@ const Main = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (input.text) {
-      /* Si el usuario ha escrito algo en input.title e input.text */
+    if (input) {
       db.collection("posts").add({
-        text: input.text,
+        text: input,
         username: user?.displayName /* Graba el nombre de usuario que ha hecho el post */,
         avatar: user?.photoURL /* Guarda el avatar de usuario que ha hecho el post */,
         email: user?.email,
@@ -65,10 +63,7 @@ const Main = () => {
         messmenu: false,
       });
 
-      setInput({
-        text: "",
-        /* Usamos de nuevo setInput para limpiar la barra depués de haber enviado el mensaje */
-      });
+      setInput(""); /* Usamos de nuevo setInput para limpiar la barra depués de haber enviado el mensaje */
 
       setTimeout(updateScroll, 125);
     } else {
@@ -78,10 +73,6 @@ const Main = () => {
 
   const updateScroll = () => {
     if (Post) {
-      let scrollHeight = window.innerHeight * 0.8;
-
-      console.log(Post);
-
       mainPosts.current.scroll({ top: 0, left: 0, behavior: "smooth" });
     }
   };
@@ -124,11 +115,13 @@ const Main = () => {
               label="Mensaje"
               variant="outlined"
               color="primary"
-              value={input.text}
-              onChange={(e) => setInput({ ...input, text: e.target.value })}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
             />
+            <button className={darkMode ? "button--dark" : "button"} type="submit" onClick={handleSubmit}>
+              ENVIAR
+            </button>
           </div>
-          <button className="button" type="submit" onClick={handleSubmit}></button>
         </Box>
       </div>
     </div>

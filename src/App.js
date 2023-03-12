@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "./reducers/userSlice";
 
 function App() {
-  const { isOpen, darkMode } = useSelector((state) => state.visuals);
+  const { darkMode } = useSelector((state) => state.visuals);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -23,7 +23,6 @@ function App() {
         dispatch(setUser(user));
       }
     });
-    console.log(user);
   }, []);
 
   const dark = createTheme({
@@ -70,9 +69,7 @@ function App() {
             <CssBaseline />
             {/* Componente de MUI que sirve para que el App acepte el cambio de modo dark a modo light */}
             <Header />
-            <div className={`app__central ${isOpen ? "displayed" : ""}`}>
-              <Main />
-            </div>
+            <Main />
           </ThemeProvider>
         </>
       )}

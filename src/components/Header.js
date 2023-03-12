@@ -7,7 +7,6 @@ import IconButton from "@mui/material/IconButton";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Button } from "@mui/material";
 import { auth } from "../firebase";
-import { db } from "../firebase";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { unsetUser } from "../reducers/userSlice";

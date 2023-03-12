@@ -1,74 +1,95 @@
 .main {
-    max-height: 100%;
+  max-height: 100%;
 }
 
 .main__posts {
-    display: flex;
-    flex-direction: column-reverse;
-    overflow-y: scroll;
-    max-height: 70vh;
-    padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  max-height: 70vh;
+  padding: 0 0.5rem;
 }
 
 @media (min-width: 1024px) {
-    .post__width {
-        margin: 0 auto;
-        min-width: 1000px;
-        max-width: 1000px;
-    }
+  .post__width {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1000px;
+  }
 }
 
 /* Custom Scrollbar Start */
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #F5F5F5;
-    border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    background-color: #F5F5F5;
+  width: 5px;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #1691c2;
+  border-radius: 10px;
+  background-color: #1691c2;
 }
 
 /* Custom Scrollbar End */
 
 .main__postsBack {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    z-index: -1;
-    background-color: #6fc7c3;
-    opacity: 0.5;
-    background-image: radial-gradient(#1691c2 2px, transparent 2px),
-        radial-gradient(#1691c2 2px, #6fc7c3 2px);
-    background-size: 80px 80px;
-    background-position: 0 0,
-        40px 40px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: -1;
+  background-color: #6fc7c3;
+  opacity: 0.5;
+  background-image: radial-gradient(#1691c2 2px, transparent 2px), radial-gradient(#1691c2 2px, #6fc7c3 2px);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
 }
 
 .main__input {
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .main__inputForm {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1000px;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .main__inputFormText {
-    width: 100%;
+  width: 100%;
 }
 
 .button {
-    display: none;
+  display: block;
+  width: 125px;
+  margin-left: 2.5px;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  background-color: #1691c2;
+  border: 1px solid #0f6384;
+  border-radius: 5px;
+  transition: all 0.8s;
+}
+
+.button--dark {
+  display: block;
+  width: 125px;
+  margin-left: 2.5px;
+  font-weight: 500;
+  cursor: pointer;
+  color: black;
+  background-color: #ff8300;
+  border: 1px solid #994f00;
+  border-radius: 5px;
+  transition: all 0.8s;
 }
